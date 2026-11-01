@@ -317,6 +317,8 @@ footer p{margin:10px 0 0;color:var(--ink-3);font-size:14px;max-width:460px}
 a.tb-pos:hover{background:var(--deck)}
 .tb .form{display:flex;gap:3px;height:22px;align-items:center;margin:0}
 .tb .form i{width:10px;height:18px}
+/* the page name beside the wordmark gives way to the menu once the Forecast link made it tight (1 Nov 2026) */
+@media (max-width:1360px){.nav .here{display:none}}
 /* second row (1 Nov 2026): the forecast on current form, a shade lighter so it reads as the projection */
 .tb2{border-top:0}.tb2 .tb-item{background:var(--deck)}.tb2 a.tb-item:hover{background:var(--pit)}
 .tb2 .tb-v.under{color:#e07a70}.tb2 .tb-v.out{color:var(--blue-ink)}.tb2 .tb-v.on{color:var(--ink-1)}
