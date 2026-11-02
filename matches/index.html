@@ -148,6 +148,27 @@ render();
   if(mb){mb.addEventListener('click',function(){setMenu(mp.hidden)});
     mp.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
     document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});}
+  // phones: top strip shows four numbers with the rest behind "More"; sections fold to their titles
+  var tb=document.querySelector('.topbar');
+  if(tb){var mo=document.createElement('button');mo.type='button';mo.className='tb-more';mo.textContent='More numbers';
+    var tb2=document.querySelector('.tb2');(tb2&&tb2.parentNode===tb.parentNode?tb2:tb).insertAdjacentElement('afterend',mo);
+    mo.addEventListener('click',function(){var on=!tb.classList.contains('all');tb.classList.toggle('all',on);if(tb2)tb2.classList.toggle('all',on);
+      mo.textContent=on?'Fewer numbers':'More numbers'});}
+  if(window.matchMedia('(max-width:760px)').matches){
+    var secs=document.querySelectorAll('.home > section');
+    secs.forEach(function(s){
+      var h=s.querySelector(':scope > .wrap > .sec-head');
+      if(!h||s.classList.contains('season-sec'))return;
+      s.classList.add('fold');h.setAttribute('role','button');h.setAttribute('aria-expanded','false');h.tabIndex=0;
+      function tog(){var o=!s.classList.contains('open');s.classList.toggle('open',o);h.setAttribute('aria-expanded',o)}
+      h.addEventListener('click',tog);
+      h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+    });
+    function openHash(){var t=location.hash&&document.getElementById(location.hash.slice(1));
+      if(t&&t.classList.contains('fold')){t.classList.add('open');var h=t.querySelector('.sec-head');if(h)h.setAttribute('aria-expanded','true');
+        setTimeout(function(){t.scrollIntoView()},30)}}
+    window.addEventListener('hashchange',openHash);openHash();
+  }
   var els=document.querySelectorAll('.reveal');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
