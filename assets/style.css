@@ -138,7 +138,7 @@ a.panel:hover{border-color:var(--line-strong);background:var(--deck-up)}
 @media (max-width:520px){.mini-stats{grid-template-columns:repeat(2,1fr)}}
 .side-charts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .chart-card{overflow:hidden}
-.chart-card img{aspect-ratio:4/5;object-fit:cover;width:100%;border-bottom:1px solid var(--line)}
+.chart-card img{aspect-ratio:4/5;object-fit:cover;width:100%;height:auto;border-bottom:1px solid var(--line)}
 .chart-card span{display:block;padding:12px 14px;font-size:14px;color:var(--ink-2)}
 .chart-card span::after{content:" ↗";color:var(--ink-4)}
 
