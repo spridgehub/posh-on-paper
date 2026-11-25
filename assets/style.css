@@ -859,3 +859,44 @@ table.rt td{vertical-align:middle}
   #tactics-teaser .reveal{opacity:1;transform:none}
   #tactics-teaser .h-section{font-size:30px!important}
 }
+
+/* Shape v last game: formation + average positions beside the previous game */
+.shp-verdict{margin:0 0 16px}
+.shp-tabs{margin:0 0 12px}
+.shp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+@media (max-width:900px){.shp{grid-template-columns:1fr}}
+.shp-card{padding:16px;text-decoration:none;display:block}
+.shp-h{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:12px}
+.shp-sc{font:700 20px/1.1 var(--font-head);letter-spacing:.02em}
+.shp-f{text-align:right}
+.shp-f span{display:block;font:700 34px/1 var(--font-head);color:var(--blue-ink)}
+.shp-f small{font-size:11.5px;color:var(--ink-4)}
+.shp-svg{width:100%;display:block;border-radius:8px;background:rgb(255 255 255/.015)}
+.shp-svg .lines rect,.shp-svg .lines line,.shp-svg .lines circle{fill:none;stroke:rgb(255 255 255/.16);stroke-width:.35}
+.shp-svg .hdir{font:700 2.2px var(--font-head);letter-spacing:.12em;fill:var(--ink-4)}
+.shp-svg .sline{fill:none;stroke:rgb(255 255 255/.42);stroke-width:.4}
+.shp-svg .sdot{stroke:#fff;stroke-width:.35}
+.shp-svg .sdot.GK{fill:#0b1629} .shp-svg .sdot.DEF{fill:var(--blue-deep)} .shp-svg .sdot.MID{fill:var(--blue)} .shp-svg .sdot.FWD{fill:#7fb0ff}
+.shp-svg .snum{font:700 2.4px var(--font-head);fill:#fff}
+.shp-svg .sname{font:700 2.1px var(--font-head);fill:var(--ink-1);letter-spacing:.04em;text-transform:uppercase}
+.shp-svg .ghost{fill:rgb(255 255 255/.04);stroke:rgb(255 255 255/.32);stroke-width:.25;stroke-dasharray:.6 .5}
+.shp-svg .trail{stroke:rgb(255 255 255/.22);stroke-width:.25;stroke-dasharray:.4 .6}
+.shp.mode-a .lay-f,.shp.mode-f .lay-a{display:none}
+.shp-low{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:16px;margin-top:16px}
+@media (max-width:900px){.shp-low{grid-template-columns:1fr}}
+.shp-panel{padding:18px 20px}
+.shp-t{width:100%;border-collapse:collapse;font-size:14px}
+.shp-t th,.shp-t td{padding:9px 6px;border-bottom:1px solid var(--line);text-align:right}
+.shp-t th:first-child{text-align:left;font-weight:400;color:var(--ink-2)}
+.shp-t thead th{font:700 12px/1 var(--font-head);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4)}
+.shp-t td{font:700 18px/1 var(--font-head)}
+.shp-t .shp-d{color:var(--ink-3);font-size:15px}
+.shp-t .shp-d.big{color:var(--blue-ink)}
+.shp-t .shp-d small{font:400 11.5px var(--font-ui);color:var(--ink-4)}
+.shp-io{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.shp-io ul{list-style:none;margin:6px 0 0;padding:0;font-size:14px}
+.shp-io li{padding:4px 0;border-bottom:1px solid var(--line)}
+.shp-io li.none{color:var(--ink-4)}
+.shp-in,.shp-out{font:700 12px/1 var(--font-head);letter-spacing:.14em;text-transform:uppercase}
+.shp-in{color:var(--blue-ink)} .shp-out{color:var(--pale)}
+@media (max-width:600px){.shp-svg .sname{font-size:2.9px} .shp-svg .snum{font-size:2.9px} .shp-svg .sdot{r:3.1px}}
